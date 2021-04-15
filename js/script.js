@@ -60,3 +60,54 @@ console.log(bicycles[lightBicycle]);
  * 
 /**/
 
+// ARRAY OF TEAMS
+
+const newTeams = [];
+const teams = [
+    {
+        name: 'Roma',
+        points: 0,
+        fouls: 0,
+    },
+    {
+        name: 'Torino',
+        points: 0,
+        fouls: 0,
+    },
+    {
+        name: 'Bari',
+        points: 0,
+        fouls: 0,
+    },
+];
+
+
+for(let i = 0; i < teams.length; i++) {
+
+    let team = teams[i];
+    
+    team.points = getRandomNumbers(0, 50);
+    team.fouls = getRandomNumbers(0, 50);
+    // DESTRUCTURING AND PUSHING A NEW ARRAY OF ONLY TEAMS WITH NAMES AND FOULS
+    const {name, fouls} = teams[i];
+    newTeams.push({
+        name,
+        fouls,
+    });
+}
+
+console.log(teams);
+
+// NEW ARRAY WITH ONLY TEAMS WITH NAMES AND FOULS
+console.log(newTeams);
+
+
+/**
+ * 
+ *  FUNCTIONS
+ * 
+/**/
+
+function getRandomNumbers (min, max) {
+    return Math.floor( Math.random() * (max - min + 1) ) + min;
+}
