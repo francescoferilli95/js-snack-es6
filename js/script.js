@@ -111,3 +111,33 @@ console.log(newTeams);
 function getRandomNumbers (min, max) {
     return Math.floor( Math.random() * (max - min + 1) ) + min;
 }
+
+/**
+ * 
+ *  JSNACK 3
+ *  1. CREATE AN ARRAY 
+ *  2. CREATE A FUNCTION WHICH RETURNS WHAT IS BETWEEN TWO NUMBERS (ASK 
+ *  THE USER TO INSERT THEM)
+ *  
+/**/
+
+const people = ['Federico', 'Fabio', 'Roberta', 'Luca', 'Giuseppe', 'Lisa'];
+const newPeople = [];
+
+let min = parseInt( prompt('Please enter a Number between 0 and 5'));
+// VALIDATION
+while(isNaN(min) || min < 0 && min > people.length){
+    min = parseInt(prompt('Invalid enter, please enter a Number between 0 and 5'));
+};
+let max = parseInt( prompt('Please enter a Number between ' + min + ' and 5'));
+// VALIDATION
+while(isNaN(max) || max < 0 && max > people.length && max < min){
+    max = parseInt(prompt('Invalid enter, please enter a Number between ' + min + ' and 5'));
+};
+
+people.forEach((element, index) => {
+    if (min <= index && max >= index) {
+        newPeople.push(element);
+    }
+});
+console.log(newPeople);
