@@ -176,7 +176,7 @@ const objects = [
 const newObjects = objects.map((element) => {
     const object = {
         ...element,
-        position: getRandomNumbers(1, 10),
+        price: getRandomNumbers(10, 50),
     };
     return object;
 });
