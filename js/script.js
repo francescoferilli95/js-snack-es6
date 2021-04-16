@@ -141,3 +141,49 @@ people.forEach((element, index) => {
     }
 });
 console.log(newPeople);
+
+/**
+ * 
+ *  JSNACK 4
+ *  1. CREATE AN ARRAY OF OBJECTS WITH THESE PROPERTIES: NAME, TYPE, COLOR
+ *  2. CREATE A NEW ARRAY ADDING THE PROPERTY POSITION TO THE PREVIOUS OBJECTS
+ * 
+/**/
+
+const objects = [
+    {
+        name: 'Poppy',
+        type: 'shirt',
+        color: 'red',
+    },
+    {
+        name: 'Jumping',
+        type: 'eyeglasses',
+        color: 'black',
+    },
+    {
+        name: 'CrissCross',
+        type: 'bag',
+        color: 'blue',
+    },
+    {
+        name: 'Jenny',
+        type: 'watch',
+        color: 'pink',
+    },
+];
+
+const newObjects = objects.map((element) => {
+    const object = {
+        ...element,
+        position: getRandomNumbers(1, 10),
+    };
+    return object;
+});
+
+console.log(newObjects);
+
+
+function getRandomNumbers (min, max) {
+    return Math.floor( Math.random() * (max - min + 1)) + min;
+}
